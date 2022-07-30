@@ -3,12 +3,12 @@ import data from "./data.js";
 
 const app = express();
 
-app.get("/api/products", (res, resp) => {
-  resp.send(data.product);
+app.get("/api/products", (req, res) => {
+  res.send(data.products);
 });
 
-app.get("/", (req, resp) => {
-  resp.send("Server is ready");
+app.get("/", (req, res) => {
+  res.send("Server is ready");
 });
 
 const port = process.env.PORT || 5000;
